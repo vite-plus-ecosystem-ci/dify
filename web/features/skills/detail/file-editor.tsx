@@ -1108,7 +1108,7 @@ export function FileEditor({
         ) : isMarkdown && markdownMode === 'live' ? (
           <div className="relative h-full overflow-hidden bg-background-default">
             <MarkdownModeSwitch mode={markdownMode} onChange={setMarkdownMode} />
-            <div className="h-full scrollbar-none overflow-y-auto px-12 py-8">
+            <div className="scrollbar-none h-full overflow-y-auto px-12 py-8">
               <div className="mx-auto max-w-3xl">
                 {showMarkdownMetadataPanel && (
                   <div className="mb-3 flex flex-col gap-3 p-2">

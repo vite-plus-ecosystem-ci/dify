@@ -409,7 +409,7 @@ function VersionRow({
               <IconButton
                 aria-label={tCommon(($) => $['operation.close'])}
                 size="lg"
-                className="absolute inset-e-6 top-6"
+                className="inset-e-6 absolute top-6"
               >
                 <span aria-hidden className="i-ri-close-line size-4" />
               </IconButton>

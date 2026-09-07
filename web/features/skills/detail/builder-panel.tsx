@@ -851,7 +851,7 @@ export function SkillBuilderPanel({
       >
         <div
           className={cn(
-            'min-h-0 scrollbar-thin overflow-y-auto px-4 pt-4 pb-2.75',
+            'scrollbar-thin min-h-0 overflow-y-auto px-4 pt-4 pb-2.75',
             messages.length > 0 ? 'flex-1' : 'shrink-0',
           )}
         >

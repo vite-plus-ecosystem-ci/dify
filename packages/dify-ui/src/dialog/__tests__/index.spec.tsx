@@ -102,7 +102,7 @@ describe('Dialog wrapper', () => {
                 <IconButton
                   aria-label="Dismiss dialog"
                   size="lg"
-                  className="absolute inset-e-6 top-6"
+                  className="inset-e-6 absolute top-6"
                 >
                   <span aria-hidden className="i-ri-close-line size-4" />
                 </IconButton>
@@ -127,7 +127,7 @@ describe('Dialog wrapper', () => {
                 <IconButton
                   aria-label="Close dialog"
                   size="lg"
-                  className="absolute inset-e-6 top-6"
+                  className="inset-e-6 absolute top-6"
                 >
                   <span aria-hidden className="i-ri-close-line size-4" />
                 </IconButton>
@@ -152,7 +152,7 @@ describe('Dialog wrapper', () => {
                 <IconButton
                   aria-label="Close dialog"
                   size="lg"
-                  className="absolute inset-e-6 top-6"
+                  className="inset-e-6 absolute top-6"
                   disabled
                 >
                   <span aria-hidden className="i-ri-close-line size-4" />

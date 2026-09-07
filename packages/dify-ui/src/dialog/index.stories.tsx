@@ -92,7 +92,7 @@ export const Default: Story = {
       <DialogContent>
         <DialogClose
           render={
-            <IconButton aria-label="Close dialog" size="lg" className="absolute inset-e-6 top-6">
+            <IconButton aria-label="Close dialog" size="lg" className="inset-e-6 absolute top-6">
               <span aria-hidden className="i-ri-close-line size-4" />
             </IconButton>
           }
@@ -173,7 +173,7 @@ const ControlledDemo = () => {
         <DialogContent>
           <DialogClose
             render={
-              <IconButton aria-label="Close dialog" size="lg" className="absolute inset-e-6 top-6">
+              <IconButton aria-label="Close dialog" size="lg" className="inset-e-6 absolute top-6">
                 <span aria-hidden className="i-ri-close-line size-4" />
               </IconButton>
             }
@@ -241,7 +241,7 @@ function DetachedTriggersDemo() {
                 <IconButton
                   aria-label="Close dialog"
                   size="lg"
-                  className="absolute inset-e-6 top-6"
+                  className="inset-e-6 absolute top-6"
                 >
                   <span aria-hidden className="i-ri-close-line size-4" />
                 </IconButton>
@@ -289,7 +289,7 @@ const FormDialogDemo = () => {
         >
           <DialogClose
             render={
-              <IconButton aria-label="Close dialog" size="lg" className="absolute inset-e-6 top-6">
+              <IconButton aria-label="Close dialog" size="lg" className="inset-e-6 absolute top-6">
                 <span aria-hidden className="i-ri-close-line size-4" />
               </IconButton>
             }
@@ -396,7 +396,7 @@ const OutsideScrollingContentDemo = () => {
                       <IconButton
                         aria-label="Close dialog"
                         size="lg"
-                        className="absolute inset-e-6 top-6"
+                        className="inset-e-6 absolute top-6"
                       >
                         <span aria-hidden className="i-ri-close-line size-4" />
                       </IconButton>
@@ -480,7 +480,7 @@ const InsideScrollingContentDemo = () => {
                 <IconButton
                   aria-label="Close dialog"
                   size="lg"
-                  className="absolute inset-e-6 top-6"
+                  className="inset-e-6 absolute top-6"
                 >
                   <span aria-hidden className="i-ri-close-line size-4" />
                 </IconButton>

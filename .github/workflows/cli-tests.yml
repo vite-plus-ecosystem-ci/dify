@@ -20,7 +20,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [depot-ubuntu-24.04, windows-latest, macos-latest]
+        os:
+          - ubuntu-24.04
+          - windows-latest
+          - macos-latest
     env:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     defaults:

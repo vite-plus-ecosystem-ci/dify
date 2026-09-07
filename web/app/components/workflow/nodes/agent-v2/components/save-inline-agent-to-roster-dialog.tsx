@@ -197,7 +197,7 @@ export function SaveInlineAgentToRosterDialog({
               <IconButton
                 aria-label={t(($) => $['operation.close'], { ns: 'common' })}
                 size="lg"
-                className="absolute inset-e-5 top-5"
+                className="inset-e-5 absolute top-5"
               >
                 <span aria-hidden className="i-ri-close-line size-4" />
               </IconButton>
