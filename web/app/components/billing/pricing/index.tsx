@@ -34,7 +34,7 @@ export function Pricing({ onCancel }: { onCancel: () => void }) {
             <IconButton
               variant="secondary"
               size="xl"
-              className="inset-e-5.5 absolute top-6 z-10 rounded-full"
+              className="absolute inset-e-5.5 top-6 z-10 rounded-full"
               aria-label={t(($) => $['operation.close'], { ns: 'common' })}
             >
               <span aria-hidden="true" className="i-ri-close-line size-5" />

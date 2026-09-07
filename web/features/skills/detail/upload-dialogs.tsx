@@ -175,7 +175,7 @@ export function SkillUploadReviewDialog({
             <IconButton
               aria-label={tCommon(($) => $['operation.close'])}
               size="lg"
-              className="inset-e-5 absolute top-5"
+              className="absolute inset-e-5 top-5"
             >
               <span aria-hidden className="i-ri-close-line size-4" />
             </IconButton>
@@ -255,7 +255,7 @@ export function SkillUploadFailuresDialog({
             <IconButton
               aria-label={tCommon(($) => $['operation.close'])}
               size="lg"
-              className="inset-e-5 absolute top-5"
+              className="absolute inset-e-5 top-5"
             >
               <span aria-hidden className="i-ri-close-line size-4" />
             </IconButton>

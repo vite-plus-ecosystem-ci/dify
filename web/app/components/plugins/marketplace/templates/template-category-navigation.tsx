@@ -22,7 +22,7 @@ export default function TemplateCategoryNavigation({
   return (
     <nav
       aria-label={ariaLabel}
-      className="scrollbar-none flex w-full shrink-0 items-center justify-start gap-1 overflow-x-auto"
+      className="flex w-full shrink-0 scrollbar-none items-center justify-start gap-1 overflow-x-auto"
     >
       {TEMPLATE_CATEGORIES.map((category) => {
         const searchParams = new URLSearchParams()
