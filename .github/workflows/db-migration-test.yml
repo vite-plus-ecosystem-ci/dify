@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   db-migration-test-postgres:
-    runs-on: depot-ubuntu-24.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -59,7 +59,7 @@ jobs:
         run: uv run --directory api flask upgrade-db
 
   db-migration-test-mysql:
-    runs-on: depot-ubuntu-24.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -110,12 +110,12 @@ jobs:
           sed -i 's/DB_PORT=5432/DB_PORT=3306/' .env
           sed -i 's/DB_USERNAME=postgres/DB_USERNAME=root/' .env
 
-      # hoverkraft-tech/compose-action@v2.6.0 only waits for `docker compose up -d`
-      # to return (container processes started); it does not wait on healthcheck
-      # status. mysql:8.0's first-time init takes 15-30s, so without an explicit
-      # wait the migration runs while InnoDB is still initialising and gets
-      # killed with "Lost connection during query". Poll a real SELECT until it
-      # succeeds.
+        # hoverkraft-tech/compose-action@v2.6.0 only waits for `docker compose up -d`
+        # to return (container processes started); it does not wait on healthcheck
+        # status. mysql:8.0's first-time init takes 15-30s, so without an explicit
+        # wait the migration runs while InnoDB is still initialising and gets
+        # killed with "Lost connection during query". Poll a real SELECT until it
+        # succeeds.
       - name: Wait for MySQL to accept queries
         run: |
           set +e

@@ -31,6 +31,8 @@ trustPolicyExclude:
   - chokidar@4.0.3
   - reselect@5.1.1
   - semver@6.3.1
+  - vite-plus
+  - '@voidzero-dev/*'
 packages:
   - web
   - e2e
@@ -255,9 +257,9 @@ catalog:
   use-context-selector: 2.0.0
   uuid: 14.0.2
   vinext: 1.0.0-beta.8
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.0
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.6d65e1780791e2b24b27cf7deb63f57a420e78de
   vite-plugin-inspect: 12.0.2
-  vite-plus: 0.3.0
+  vite-plus: 0.0.0-commit.6d65e1780791e2b24b27cf7deb63f57a420e78de
   vitest: 4.1.11
   vitest-browser-react: 2.2.0
   vitest-canvas-mock: 1.1.5
