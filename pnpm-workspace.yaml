@@ -10,6 +10,17 @@ catalogPrune: true
 dedupeDirectDeps: true
 engineStrict: true
 minimumReleaseAge: 0
+minimumReleaseAgeExclude:
+  - vite-plus
+  - '@voidzero-dev/*'
+  - oxlint
+  - '@oxlint/*'
+  - oxlint-tsgolint
+  - '@oxlint-tsgolint/*'
+  - oxfmt
+  - '@oxfmt/*'
+  - vitest
+  - '@vitest/*'
 optimisticRepeatInstall: true
 resolutionMode: time-based
 saveExact: true
@@ -263,14 +274,3 @@ peerDependencyRules:
   allowedVersions:
     vite: '*'
     vitest: '*'
-minimumReleaseAgeExclude:
-  - vite-plus
-  - '@voidzero-dev/*'
-  - oxlint
-  - '@oxlint/*'
-  - oxlint-tsgolint
-  - '@oxlint-tsgolint/*'
-  - oxfmt
-  - '@oxfmt/*'
-  - vitest
-  - '@vitest/*'
