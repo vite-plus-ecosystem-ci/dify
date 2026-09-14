@@ -1,0 +1,58 @@
+name: Vite+ web test comparison
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+        version:
+          - '0.3.1'
+          - '0.0.0-commit.6b5bbcaf494b963b67950e77a7673de21ba9c6d5'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: '318964e4dc10ad836ac8ab88d280377b83f7e7a1'
+          persist-credentials: false
+      - uses: voidzero-dev/setup-vp@9fd26ff49f9b5e6276c2b493da4454ad4527f7f4 # v1.20.0
+        with:
+          version: ${{ matrix.version }}
+          node-version: '24.20.0'
+          run-install: false
+          cache: false
+      - name: Allow preview packages in the comparison
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          path = Path('pnpm-workspace.yaml')
+          content = re.sub(r'^minimumReleaseAge: .+$', 'minimumReleaseAge: 0', path.read_text(), flags=re.M)
+          content = content.replace('trustPolicyExclude:\n', "trustPolicyExclude:\n  - vite-plus\n  - '@voidzero-dev/*'\n")
+          path.write_text(content)
+          PY
+      - name: Migrate the same project base
+        run: vp migrate . --no-interactive
+      - name: Check installed versions
+        run: vp why -r vite-plus vite vitest
+      - run: vp install --frozen-lockfile
+      - name: Run the full unit shard
+        working-directory: web
+        run: vp test run --project unit --reporter=blob --reporter=minimal --shard=${{ matrix.shard }}/4 --coverage
+      - name: Preserve dependency graph and reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: vp-web-${{ matrix.version }}-${{ matrix.shard }}
+          path: |
+            pnpm-lock.yaml
+            web/.vitest-reports/*
+          include-hidden-files: true
+          retention-days: 7
