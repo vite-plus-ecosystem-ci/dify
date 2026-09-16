@@ -2,6 +2,7 @@ import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   pack: {
+    deps: { resolveDepSubpath: true },
     entry: ['src/index.ts'],
     format: ['esm'],
     platform: 'node',
@@ -14,6 +15,7 @@ export default defineConfig({
     target: false,
   },
   test: {
+    clearMocks: false,
     environment: 'node',
     include: ['**/*.test.ts'],
     coverage: {

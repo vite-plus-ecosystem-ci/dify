@@ -54,6 +54,7 @@ export default defineConfig({
     },
   },
   test: {
+    clearMocks: false,
     environment: 'node',
     globalSetup: ['test/e2e/setup/global-setup.ts'],
     // E2E tests do NOT use the unit-test setup.ts (no globalThis stubs needed —

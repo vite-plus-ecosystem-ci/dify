@@ -14,6 +14,7 @@ export default defineConfig({
     },
   },
   pack: {
+    deps: { resolveDepSubpath: true },
     entry: ['src/index.ts', 'src/commands/**/*.ts', 'src/framework/**/*.ts'],
     format: ['esm'],
     fixedExtension: false,
@@ -33,6 +34,7 @@ export default defineConfig({
     },
   },
   test: {
+    clearMocks: false,
     environment: 'node',
     setupFiles: ['./test/setup.ts'],
     include: ['test/**/*.test.ts', 'src/**/*.test.ts', 'scripts/**/*.test.ts'],

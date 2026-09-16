@@ -19,7 +19,11 @@ export default defineConfig({
     include: ['vite-plus/test/browser'],
   },
   test: {
+    clearMocks: false,
+    sharedViteServer: false,
     browser: {
+      locators: { exact: false },
+      expect: { toMatchScreenshot: { screenshotDirectory: './.vitest-browser/screenshots' } },
       enabled: true,
       provider: playwright(),
       instances: [{ browser: 'chromium' }],
