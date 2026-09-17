@@ -28,9 +28,12 @@ shellEmulator: true
 strictDepBuilds: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
-  - chokidar@4.0.3
-  - reselect@5.1.1
-  - semver@6.3.1
+  - 'chokidar@4.0.3'
+  - 'reselect@5.1.1'
+  - 'semver@6.3.1'
+  - 'vite-plus'
+  - '@voidzero-dev/*'
+  - 'undici-types'
 verifyDepsBeforeRun: install
 packages:
   - web
@@ -256,9 +259,9 @@ catalog:
   use-context-selector: 2.0.0
   uuid: 14.0.2
   vinext: 1.0.0-beta.10
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.2
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.fba044cf40fea5a7bf4a2ee97822f174eab33dfa
   vite-plugin-inspect: 12.0.2
-  vite-plus: 0.3.2
+  vite-plus: 0.0.0-commit.fba044cf40fea5a7bf4a2ee97822f174eab33dfa
   vitest: 4.1.11
   vitest-browser-react: 2.3.0
   vitest-canvas-mock: 1.2.0
