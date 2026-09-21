@@ -19,7 +19,25 @@ export default defineConfig({
     include: ['vite-plus/test/browser'],
   },
   test: {
+    // Vitest v4 compatibility: preserve mock call history.
+    // Remove after tests no longer rely on calls from setup or earlier tests.
+    // https://rfc-vitest-v5-upgrade-viteplus-dev.voidzero-docs.workers.dev/guide/vitest-v5#remove-unneeded-compatibility-settings
+    // https://vitest.dev/guide/migration/#clearmocks-is-enabled-by-default
+    clearMocks: false,
+    // Vitest v4 compatibility: keep separate Vite servers for inline projects.
+    // Remove when plugins and config hooks can run once for shared projects.
+    // https://rfc-vitest-v5-upgrade-viteplus-dev.voidzero-docs.workers.dev/guide/vitest-v5#remove-unneeded-compatibility-settings
+    // https://vitest.dev/guide/migration/#inline-projects-share-the-vite-server-by-default
+    sharedViteServer: false,
     browser: {
+      locators: {
+        // Vitest v4 compatibility: keep partial, case-insensitive locator matching.
+        // Remove after updating locators for full, case-sensitive matches.
+        // https://rfc-vitest-v5-upgrade-viteplus-dev.voidzero-docs.workers.dev/guide/vitest-v5#remove-unneeded-compatibility-settings
+        // https://vitest.dev/guide/migration/#locators-are-strict-by-default
+        exact: false,
+      },
+      expect: { toMatchScreenshot: { screenshotDirectory: './.vitest-browser/screenshots' } },
       enabled: true,
       provider: playwright(),
       instances: [{ browser: 'chromium' }],

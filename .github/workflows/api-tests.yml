@@ -205,7 +205,7 @@ jobs:
 
   api-integration:
     name: API Integration Tests (${{ matrix.python-version }})
-    runs-on: depot-ubuntu-24.04-4
+    runs-on: ubuntu-24.04
     env:
       COVERAGE_FILE: coverage-integration-${{ matrix.python-version }}
       STORAGE_TYPE: opendal
