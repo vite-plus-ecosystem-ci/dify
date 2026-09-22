@@ -1,0 +1,21 @@
+# Ecosystem-ci smoke test: the fork's PR workflows use Depot runners.
+# Delete this workflow when upstream CI runs on GitHub-hosted runners.
+name: ecosystem-ci build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "24"
+          cache: false
+          run-install: true
+      - name: vp check
+        run: vp check
+      - name: vp build
+        run: vp run dify-web#build:vinext
