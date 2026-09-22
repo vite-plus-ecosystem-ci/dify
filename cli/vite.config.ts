@@ -11,11 +11,13 @@ export default defineConfig({
       '@test': fileURLToPath(new URL('./test', import.meta.url)),
     },
   },
-  pack: { deps: {
+  pack: {
+    deps: {
       // tsdown <0.23 compatibility: resolve external dependency subpaths.
       // Remove to preserve subpath imports as written (the new default).
       // https://tsdown.dev/options/dependencies#deps-resolvedepsubpath
-      resolveDepSubpath: true },
+      resolveDepSubpath: true,
+    },
     entry: ['src/index.ts', 'src/commands/**/*.ts', 'src/framework/**/*.ts'],
     format: ['esm'],
     fixedExtension: false,
