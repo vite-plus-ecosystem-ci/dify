@@ -1,6 +1,8 @@
 import './types/i18n'
 import './types/jsx'
 import './types/assets'
+import '@testing-library/jest-dom/vitest'
+import '@vitest/browser/matchers'
 import 'vitest'
 
 declare module 'vitest' {
