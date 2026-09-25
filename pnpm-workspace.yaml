@@ -31,6 +31,9 @@ shellEmulator: true
 strictDepBuilds: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
+  # ecosystem-ci smoke test: preview builds carry no provenance
+  - vite-plus
+  - '@voidzero-dev/*'
   - chokidar@4.0.3
   - reselect@5.1.1
   - semver@6.3.1
