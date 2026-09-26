@@ -31,6 +31,9 @@ shellEmulator: true
 strictDepBuilds: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
+  # ecosystem-ci smoke test: preview builds carry no provenance and are brand new
+  - vite-plus
+  - '@voidzero-dev/*'
   - chokidar@4.0.3
   - reselect@5.1.1
   - semver@6.3.1
@@ -265,9 +268,9 @@ catalog:
   use-context-selector: 2.0.0
   uuid: 14.0.2
   vinext: 1.0.0-beta.10
-  vite: npm:@voidzero-dev/vite-plus-core@1.0.0-rc.0
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.dd71b05c0f66a3529d0da591363c1ee6be3ec17d
   vite-plugin-inspect: 12.0.2
-  vite-plus: 1.0.0-rc.0
+  vite-plus: 0.0.0-commit.dd71b05c0f66a3529d0da591363c1ee6be3ec17d
   vitest: 5.0.1
   vitest-browser-react: 2.3.0
   vitest-canvas-mock: 1.2.0
