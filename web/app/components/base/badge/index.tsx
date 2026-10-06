@@ -85,4 +85,5 @@ const Badge: React.FC<BadgeProps> = ({
 Badge.displayName = 'Badge'
 
 export default Badge
+// oxlint-disable-next-line react/only-export-components -- BadgeState is the const-object replacement for the former enum and is imported alongside Badge.
 export { Badge, BadgeState }
