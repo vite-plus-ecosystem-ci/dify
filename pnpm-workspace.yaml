@@ -148,8 +148,8 @@ catalog:
   '@typescript/native': npm:typescript@7.0.2
   '@vitejs/plugin-react': 6.1.2
   '@vitejs/plugin-rsc': 0.5.36
-  '@vitest/browser-playwright': 5.0.3
-  '@vitest/coverage-v8': 5.0.3
+  '@vitest/browser-playwright': 5.0.4
+  '@vitest/coverage-v8': 5.0.4
   '@xmldom/xmldom': 0.9.12
   abcjs: 6.7.1
   agentation: 3.1.2
@@ -265,10 +265,10 @@ catalog:
   use-context-selector: 2.0.0
   uuid: 14.0.2
   vinext: 1.1.0
-  vite: npm:@voidzero-dev/vite-plus-core@1.1.0
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.824e84de80cbc1af30829ed024a4158d416dbad3
   vite-plugin-inspect: 12.0.2
-  vite-plus: 1.1.0
-  vitest: 5.0.3
+  vite-plus: 0.0.0-commit.824e84de80cbc1af30829ed024a4158d416dbad3
+  vitest: 5.0.4
   vitest-browser-react: 2.3.0
   vitest-canvas-mock: 1.2.0
   zod: 4.6.5
